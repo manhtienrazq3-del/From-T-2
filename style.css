@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #e3f2fd, #ffffff);
+    color: #333;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #0066ff, #00c6ff);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+header p {
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* NAVIGATION */
+nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: #0066ff;
+    font-weight: 500;
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    width: 0%;
+    height: 3px;
+    background: #0066ff;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* SECTION */
+section {
+    padding: 40px 10%;
+}
+
+/* CARD */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* IMAGE */
+.main-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background: #0066ff;
+    color: white;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f1f7ff;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #0066ff, #00c6ff);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* FOOTER */
+footer {
+    background: #0066ff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    section {
+        padding: 30px 5%;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
