@@ -1,37 +1,124 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Thành tích lớp 12C2</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Thành tích lớp 12C2</title>
 </head>
+
 <body>
 
-<header>
-    <h1>Trang thành tích</h1>
-</header>
-
-<nav>
-    <a href="index.html">Trang chủ</a>
-    <a href="thanhvien.html">Trang thành viên</a>
-    <a href="hoatdong.html">Trang hoạt động</a>
-    <a href="thanhtich.html">Trang thành tích</a>
+<!-- Thanh điều hướng -->
+<nav style="background:hsl(210,40%,95%); padding:10px;">
+    <a href="index.html" style="margin-right:10px;">Trang chủ</a>
+    <a href="hoatdong.html" style="margin-right:10px;">Hoạt động</a>
+    <a href="thanhvien.html">Thành viên</a>
 </nav>
 
-<section>
-    <h2>Bảng giải thưởng</h2>
-    <p>Đang tổng hợp...</p>
+<h2>THÀNH TÍCH LỚP 12C2</h2>
 
-    <h2>Mục tiêu năm học</h2>
-    <ul>
-        <li>100% học sinh đỗ tốt nghiệp</li>
-        <li>Trên 70% học sinh đỗ đại học</li>
-    </ul>
-</section>
+<!-- Thanh tìm kiếm -->
+<input type="text" id="searchInput" 
+       placeholder="Nhập họ và tên để tìm..."
+       onkeyup="searchName()"
+       style="padding:6px; width:300px; margin-bottom:10px;">
 
-<footer>
-    © 2026 - Lớp 12C2
-</footer>
+<table border="1" cellpadding="6" cellspacing="0"
+       style="width:100%; border-color:hsl(210,30%,80%);">
+
+<tr style="background:hsl(210,40%,95%);">
+    <th>Họ và tên</th>
+    <th>Thành tích</th>
+    <th>Khen thưởng</th>
+</tr>
+
+<tr>
+    <td>Ngô Lê Kiều Duyên</td>
+    <td>Giải Ba HSG Hóa cấp trường</td>
+    <td>Học sinh giỏi</td>
+</tr>
+
+<tr>
+    <td>Mai Phượng Thúy An</td>
+    <td>-</td>
+    <td>Học sinh giỏi</td>
+</tr>
+
+<tr>
+    <td>Nguyễn Mạnh Tiến</td>
+    <td>-</td>
+    <td>Học sinh giỏi</td>
+</tr>
+
+<tr>
+    <td>Lưu Quang Duy</td>
+    <td>-</td>
+    <td>Học sinh giỏi</td>
+</tr>
+
+<tr>
+    <td>Tống Thị Yên</td>
+    <td>-</td>
+    <td>Học sinh giỏi</td>
+</tr>
+
+<tr>
+    <td>Ngô Nguyễn Uyển Nhi</td>
+    <td>Giải Ba HSG Văn cấp trường</td>
+    <td>Học sinh xuất sắc</td>
+</tr>
+
+<tr>
+    <td>Nguyễn Thị Tú Quyên</td>
+    <td>Giải Nhì bóng đá; KK HSG Lịch sử</td>
+    <td>Học sinh khá</td>
+</tr>
+
+<tr>
+    <td>Võ Nguyễn Tường Vi</td>
+    <td>-</td>
+    <td>Học sinh giỏi</td>
+</tr>
+
+<tr>
+    <td>Nguyễn Tiến Khang</td>
+    <td>-</td>
+    <td>Học sinh giỏi</td>
+</tr>
+
+<tr>
+    <td>Đoàn Trí Dũng</td>
+    <td>Giải Nhất HSG Lý cấp trường</td>
+    <td>Học sinh xuất sắc</td>
+</tr>
+
+<tr>
+    <td>Trần Anh Dũng</td>
+    <td>Giải Nhì HSG Lý cấp trường</td>
+    <td>Học sinh xuất sắc</td>
+</tr>
+
+</table>
+
+<script>
+function searchName() {
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var table = document.querySelector("table");
+    var tr = table.getElementsByTagName("tr");
+
+    for (var i = 1; i < tr.length; i++) {
+        var td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            var txtValue = td.textContent || td.innerText;
+            if (txtValue.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+</script>
 
 </body>
 </html>
